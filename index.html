@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Ashutosh Rathore | System Status</title>
+    <meta name="description" content="A fun developer-themed love page for Ashutosh Rathore, styled like a system status dashboard.">
+    <style>
+        :root {
+            --primary-cyan: #00f7ff;
+            --bg-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--bg-gradient);
+            font-family: 'Courier New', monospace;
+            color: white;
+            overflow: hidden;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 40px 32px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 480px;
+            box-shadow: 0 0 40px rgba(0, 247, 255, 0.2);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            animation: fadeIn 1.5s ease-out;
+            position: relative;
+            z-index: 10;
+        }
+
+        h1 {
+            font-size: 22px;
+            color: var(--primary-cyan);
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            color: #a0b3c5;
+            margin-bottom: 24px;
+        }
+
+        .code-block {
+            text-align: left;
+            background: rgba(0, 0, 0, 0.35);
+            padding: 18px 16px;
+            border-radius: 10px;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            border-left: 3px solid var(--primary-cyan);
+            overflow-x: auto;
+        }
+
+        .keyword { color: #ff79c6; }
+        .string { color: #f1fa8c; }
+        .comment { color: #6272a4; font-style: italic; }
+
+        .message-text {
+            font-size: 18px;
+            margin-top: 15px;
+            color: #e0e0e0;
+        }
+
+        .message-text strong {
+            color: var(--primary-cyan);
+        }
+
+        button {
+            margin-top: 25px;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            background: var(--primary-cyan);
+            color: #0f2027;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 247, 255, 0.4);
+        }
+
+        .footer {
+            margin-top: 18px;
+            font-size: 12px;
+            color: #9fb3c6;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .heart {
+            position: absolute;
+            color: rgba(0, 247, 255, 0.2);
+            user-select: none;
+            pointer-events: none;
+            animation: float 5s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            50% { opacity: 0.5; }
+            100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 28px 20px;
+            }
+
+            .message-text {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="card" aria-label="Love message for Ashutosh">
+        <h1>// System Status</h1>
+        <div class="subtitle">Target: <strong>Ashutosh Rathore</strong> &nbsp; | &nbsp; Mode: <strong>Background Process</strong></div>
+
+        <div class="code-block">
+            <span class="keyword">if</span> (Ashutosh.isRunning(<span class="string">"background"</span>)) {<br>
+            &nbsp;&nbsp;<span class="comment">// Error: Brain cache full</span><br>
+            &nbsp;&nbsp;Me.thinkAbout(Ashutosh);<br>
+            }
+        </div>
+
+        <div class="message-text">
+            Are you running in the <strong>background</strong>?<br>
+            Because I keep thinking about you. 💻💗
+        </div>
+
+        <button onclick="addHeart()">Execute Love.exe</button>
+
+        <div class="footer">
+            Status: <strong>Online</strong> • Connection: <strong>Secure</strong>
+        </div>
+    </main>
+
+    <script>
+        function addHeart() {
+            for (let i = 0; i < 5; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '💗';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                document.body.appendChild(heart);
+
+                setTimeout(() => heart.remove(), 5000);
+            }
+        }
+
+        setInterval(() => {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '💻';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = '6s';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 6000);
+        }, 2000);
+    </script>
+</body>
+</html>
